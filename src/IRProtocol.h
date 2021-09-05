@@ -63,6 +63,7 @@ typedef enum {
     LEGO_PF,
     MAGIQUEST,
     WHYNTER,
+    REVICE,
 } decode_type_t;
 
 const __FlashStringHelper* getProtocolString(decode_type_t aProtocol);

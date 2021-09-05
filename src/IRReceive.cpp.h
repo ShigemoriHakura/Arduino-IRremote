@@ -266,6 +266,13 @@ bool IRrecv::decode() {
     }
 #endif
 
+#if defined(DECODE_REVICE)
+    TRACE_PRINTLN("Attempting Revice decode");
+    if (decodeRevice()) {
+        return true;
+    }
+#endif
+
 #if defined(DECODE_PANASONIC) || defined(DECODE_KASEIKYO)
     TRACE_PRINTLN("Attempting Panasonic/Kaseikyo decode");
     if (decodeKaseikyo()) {
@@ -1488,6 +1495,13 @@ bool IRrecv::decode(decode_results *aResults) {
 //    DEBUG_PRINTLN("Attempting Lego Power Functions");
 //    if (decodeLegoPowerFunctions(results))  return true ;
 //#endif
+
+#if defined(DECODE_REVICE)
+    DEBUG_PRINTLN("Attempting Revice decode");
+    if (decodeRevice()) {
+        return true ;
+    }
+#endif
 
     // decodeHash returns a hash on any input.
     // Thus, it needs to be last in the list.

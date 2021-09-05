@@ -266,6 +266,7 @@ public:
 
     // Template function :-)
     bool decodeShuzu();
+    bool decodeRevice();
 
     /*
      * Old functions
@@ -279,6 +280,7 @@ public:
     bool decodeSonyMSB(decode_results *aResults);
     bool decodeSAMSUNG(decode_results *aResults);
     bool decodeHashOld(decode_results *aResults);
+    bool decodeReviceMSB(decode_results *aResults);
 
     bool decode(
             decode_results *aResults)
@@ -473,6 +475,7 @@ public:
 
 // Template protocol :-)
     void sendShuzu(uint16_t aAddress, uint8_t aCommand, uint_fast8_t aNumberOfRepeats);
+    void sendRevice(int Dec);
 
     /*
      * OLD send functions
